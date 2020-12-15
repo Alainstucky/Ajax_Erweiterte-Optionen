@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="../css/feedback.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../javascripts/nav.js"></script>
+    <script src="../javascripts/feedback.js"></script>
+    <title>Ferrai</title>
+
+</head>
+<body>
+
+<nav>
+        <span>
+            <a href="index.html">Tony's Pizza Factory</a>
+        </span>
+    <div>
+        <a href="pizzas.html">Pizza</a>
+        <a href="salads.html">Salad</a>
+        <a href="softdrinks.html">Soft drinks</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</nav>
+
+<main id="feedback">
+    <h1>Tell us what you think</h1>
+    <form id="feedbackForm">
+        <p>How do you like our pizza?<br>
+            <span id="pizzaqValidation"></span>
+            <input type="radio" id="awesome" name="pizzaq" value="awesome">
+            <label class="radio" for="awesome">Awesome</label>
+            <input type="radio" id="good" name="pizzaq" value="good">
+            <label class="radio" for="good">Good</label>
+            <input type="radio" id="okayp" name="pizzaq" value="okay">
+            <label class="radio" for="okayp">Okay</label>
+            <input type="radio" id="poor" name="pizzaq" value="poor">
+            <label class="radio" for="poor">Poor</label>
+        </p>
+        <p>What do you think about our prices?<br>
+            <span id="prizeqValidation"></span>
+            <input type="radio" id="fair" name="prizeq" value="fair">
+            <label class="radio" for="fair">Fair</label>
+            <input type="radio" id="okay" name="prizeq" value="okay">
+            <label class="radio" for="okay">Okay</label>
+            <input type="radio" id="expensive" name="prizeq" value="expensive">
+            <label class="radio" for="expensive">Expensive</label>
+        </p>
+        <p><label for="name">Your name?</label><br>
+            <span id="nameValidation"></span>
+            <input id="name" type="text" name="name" placeholder="Tony Ferrari">
+        </p>
+        <p><label for="email">Your e-mail address?</label><br>
+            <span id="emailValidation"></span>
+            <input id="email" type="text" name="email" placeholder="tony@gmail.com">
+        </p>
+        <p><label for="yourOpinion">What can we do better?</label><br>
+            <span id="textValidation"></span>
+            <textarea rows="4" cols="30" id="yourOpinion" name="yourOpinion"></textarea>
+        </p>
+        <p><input type="button" id="submission" value="Send" onclick="prepareFeedback()"></p>
+    </form>
+</main>
+
+<div id="chartContainer">
+    <script src="/lib/d3.v4.3.0.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+    <script type="text/javascript">
+        var svg = dimple.newSvg("#chartContainer", 590, 400);
+        d3.tsv("/data/example_data.tsv", function (data) {
+            var myChart = new dimple.chart(svg, data);
+            myChart.setBounds(20, 20, 460, 360)
+            myChart.addMeasureAxis("p", "Unit Sales");
+            myChart.addSeries("Owner", dimple.plot.pie);
+            myChart.addLegend(500, 20, 90, 300, "left");
+            myChart.draw();
+        });
+    </script>
+</div>
+
+
+<footer>
+    <div>
+        <p>Hours<br>
+            Mon-Thu: 11 am - 23 pm<br>
+            Fri-Sat: 11 am - 24pm<br>
+            Sunday closed</p>
+    </div>
+    <div>
+        <blockquote>
+            "The Pizzeria is one place I have been wanting to visit for a long time. The reason being their Napoli
+            pizza
+            which absolutely blew me away" - Jimmy
+        </blockquote>
+    </div>
+    <div>
+        <address>
+            <p>Address<br>
+                Tony's Pizza Factory<br>
+                2122 N Clark St<br>
+                Chicago, IL 60614, USA</p>
+        </address>
+    </div>
+</footer>
+
+</body>
+</html>

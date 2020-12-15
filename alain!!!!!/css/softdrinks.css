@@ -1,0 +1,61 @@
+#softdrinks {
+    display: grid;
+    grid: 0.5fr max-content 0.25fr / 0.1fr repeat(4, max-content) 0.1fr;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#softdrinks h1 {
+    font-size: 40px;
+    grid-area: 1/1/2/-1;
+}
+
+#softdrinks .product img {
+    height: 200px;
+    width: auto;
+}
+
+/* Additional grids will be implemented together with xml calls */
+
+@media screen and (max-width: 1150px) {
+    #softdrinks {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        justify-content: space-between;
+        text-align: center;
+    }
+    #softdrinks h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #softdrinks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        justify-content: space-between;
+        text-align: center;
+    }
+    #softdrinks .product {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #softdrinks {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-content: space-between;
+        text-align: center;
+    }
+    #softdrinks .product {
+        font-size: 12px;
+    }
+    #softdrinks .product img {
+        height: 150px;
+        width: auto;
+    }
+}

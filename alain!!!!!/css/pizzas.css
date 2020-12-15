@@ -1,0 +1,58 @@
+#pizzas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#pizzas h1 {
+    font-size: 40px;
+    grid-area: 1/1/2/-1;
+}
+
+#pizzas .product img {
+    height: 200px;
+    width: auto;
+}
+
+/* Additional grids will be implemented together with xml calls */
+
+@media screen and (max-width: 1500px){
+    #pizzas {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #pizzas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+    #pizzas h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #pizzas {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-content: space-between;
+        text-align: center;
+    }
+    #pizzas .product {
+        font-size: 12px;
+    }
+    #pizzas .product img {
+        height: 150px;
+        width: auto;
+    }
+
+}

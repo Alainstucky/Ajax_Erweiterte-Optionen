@@ -1,0 +1,54 @@
+#salads {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#salads h1 {
+    font-size: 40px;
+    grid-area: 1/1/2/-1;
+}
+
+#salads .product img {
+    height: 200px;
+    width: auto;
+}
+
+/* Additional grids will be implemented together with xml calls */
+
+@media screen and (max-width: 1150px) {
+    #salads {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        justify-content: space-between;
+        text-align: center;
+    }
+    #salads h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #salads {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    #salads {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-content: space-between;
+        text-align: center;
+    }
+    #salads .product {
+        font-size: 12px;
+    }
+}
